@@ -36,5 +36,13 @@ public class RockPaperScissorsTestShould
 
         Assert.Equal("ROCK", result);
     }
+
+    [Fact]
+    public void PlayerOneWithScissorsBeatsByPlayerTwoWithPaper()
+    { var result = _game.play("SCISSORS", "PAPER");
+
+        Assert.Equal("SCISSORS", result);
+    }
 }
+
 
