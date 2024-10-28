@@ -6,7 +6,7 @@ public class Game
     {
     }
 
-    public String play(string firstElement, string secondElement)
+    public string play(string firstElement, string secondElement)
     {
         if (firstElement == "ROCK")
         {
