@@ -8,6 +8,12 @@ public class Game
 
     public String play(string firstElement, string secondElement)
     {
-        return "ROCK";
+        if (firstElement == "ROCK")
+        {
+            return "ROCK";
+        }
+
+        return "PAPER";
+
     }
 }
