@@ -15,6 +15,10 @@ public class Game
 
         if (firstElement == "SCISSORS")
         {
+            if (secondElement == "PAPER")
+            {
+                return "SCISSORS";
+            }
             return "ROCK";
         }
 
