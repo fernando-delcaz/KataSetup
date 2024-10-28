@@ -17,18 +17,6 @@ public class RockPaperScissorsTestShould
     }
 
     [Fact]
-    public void PlayerTwoWithRockBeatsPlayerOneWithScissors()
-    {
-        var playerOne = "Manu";
-        var playerTwo = "Fer";
-        var game = new Game(playerOne, playerTwo);
-
-        var result = game.play("SCISSORS", "ROCK");
-
-        Assert.Equal("ROCK", result);
-    }
-
-    [Fact]
     public void PlayerOneWithPaperBeatsPlayerTwoWithRock()
     {
         var playerOne = "Manu";
@@ -38,6 +26,19 @@ public class RockPaperScissorsTestShould
         var result = game.play("PAPER", "ROCK");
 
         Assert.Equal("PAPER", result);
+    }
+
+
+    [Fact]
+    public void PlayerOneWithScissorsIsBeatenByPlayerTwoWithRock()
+    {
+        var playerOne = "Manu";
+        var playerTwo = "Fer";
+        var game = new Game(playerOne, playerTwo);
+
+        var result = game.play("SCISSORS", "ROCK");
+
+        Assert.Equal("ROCK", result);
     }
 }
 

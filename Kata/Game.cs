@@ -13,7 +13,11 @@ public class Game
             return "ROCK";
         }
 
-        return "PAPER";
+        if (firstElement == "SCISSORS")
+        {
+            return "ROCK";
+        }
 
+        return "PAPER";
     }
 }
