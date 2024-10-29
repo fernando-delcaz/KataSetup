@@ -5,43 +5,41 @@ namespace Tests;
 public class RockPaperScissorsTestShould
 {
     private readonly Game _game;
-    private const string PlayerOne = "Manu";
-    private const string PlayerTwo = "Fer";
 
     public RockPaperScissorsTestShould()
     {
-        var game = new Game(PlayerOne, PlayerTwo);
+        var game = new Game();
         _game = game;
     }
 
     [Fact]
     public void PlayerOneWithRockBeatsPlayerTwoWithScissors()
     {
-        var result = _game.play("ROCK", "SCISSORS");
+        var result = _game.play(Symbol.Rock, Symbol.Scissors);
 
-        Assert.Equal("ROCK", result);
+        Assert.Equal(Symbol.Rock, result);
     }
 
     [Fact]
     public void PlayerOneWithPaperBeatsPlayerTwoWithRock()
     {
-        var result = _game.play("PAPER", "ROCK");
+        var result = _game.play(Symbol.Paper, Symbol.Rock);
 
-        Assert.Equal("PAPER", result);
+        Assert.Equal(Symbol.Paper, result);
     }
 
     [Fact]
     public void PlayerOneWithScissorsIsBeatenByPlayerTwoWithRock()
-    { var result = _game.play("SCISSORS", "ROCK");
+    { var result = _game.play(Symbol.Scissors, Symbol.Rock);
 
-        Assert.Equal("ROCK", result);
+        Assert.Equal(Symbol.Rock, result);
     }
 
     [Fact]
     public void PlayerOneWithScissorsBeatsByPlayerTwoWithPaper()
-    { var result = _game.play("SCISSORS", "PAPER");
+    { var result = _game.play(Symbol.Scissors, Symbol.Paper);
 
-        Assert.Equal("SCISSORS", result);
+        Assert.Equal(Symbol.Scissors, result);
     }
 }
 

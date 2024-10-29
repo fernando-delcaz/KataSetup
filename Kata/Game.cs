@@ -1,27 +1,31 @@
 namespace Kata;
 
+public enum Symbol
+{
+    Rock,
+    Scissors,
+    Paper
+}
+
 public class Game
 {
-    public Game(string playerOne, string playerTwo)
+    public Symbol play(Symbol oneElement, Symbol anotherElement)
     {
-    }
-
-    public string play(string firstElement, string secondElement)
-    {
-        if (firstElement == "ROCK")
+        if (oneElement == Symbol.Rock && anotherElement == Symbol.Scissors)
         {
-            return "ROCK";
+            return Symbol.Rock;
         }
 
-        if (firstElement == "SCISSORS")
+        if (oneElement == Symbol.Scissors && anotherElement == Symbol.Paper)
         {
-            if (secondElement == "PAPER")
-            {
-                return "SCISSORS";
-            }
-            return "ROCK";
+            return Symbol.Scissors;
         }
 
-        return "PAPER";
+        if (oneElement == Symbol.Paper && anotherElement == Symbol.Rock)
+        {
+            return Symbol.Paper;
+        }
+
+        return Symbol.Rock;
     }
 }
