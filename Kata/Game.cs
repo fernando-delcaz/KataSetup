@@ -20,16 +20,11 @@ public class Game
             return Symbol.Paper;
         }
 
-        if (oneElement == Symbol.Rock && anotherElement == Symbol.Scissors)
+        if (symbols.Contains(Symbol.Scissors) && symbols.Contains(Symbol.Rock))
         {
             return Symbol.Rock;
         }
 
-        if (oneElement == Symbol.Scissors && anotherElement == Symbol.Paper)
-        {
-            return Symbol.Scissors;
-        }
-
-        return Symbol.Rock;
+        return Symbol.Scissors;
     }
 }
