@@ -32,18 +32,12 @@ public class RockPaperScissorsTestShould
         Assert.Equal(Symbol.Paper, result);
     }
 
-    [Fact]
-    public void PlayerOneWithScissorsIsBeatenByPlayerTwoWithRock()
+    [Theory]
+    [InlineData(Symbol.Paper, Symbol.Scissors)]
+    [InlineData(Symbol.Scissors, Symbol.Paper)]
+    public void ScissorsBeatsPaper(Symbol one, Symbol another)
     {
-        var result = _game.play(Symbol.Scissors, Symbol.Rock);
-
-        Assert.Equal(Symbol.Rock, result);
-    }
-
-    [Fact]
-    public void PlayerOneWithScissorsBeatsByPlayerTwoWithPaper()
-    {
-        var result = _game.play(Symbol.Scissors, Symbol.Paper);
+        var result = _game.play(one, another);
 
         Assert.Equal(Symbol.Scissors, result);
     }
