@@ -21,6 +21,14 @@ public class RockPaperScissorsTestShould
     }
 
     [Fact]
+    public void PlayerOneWithScissorsBeatsPlayerTwoWithRock()
+    {
+        var result = _game.play(Symbol.Scissors, Symbol.Rock);
+
+        Assert.Equal(Symbol.Rock, result);
+    }
+
+    [Fact]
     public void PlayerOneWithPaperBeatsPlayerTwoWithRock()
     {
         var result = _game.play(Symbol.Paper, Symbol.Rock);
