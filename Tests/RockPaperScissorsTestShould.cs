@@ -15,15 +15,25 @@ public class RockPaperScissorsTestShould
     [Theory]
     [InlineData(Symbol.Rock, Symbol.Scissors)]
     [InlineData(Symbol.Scissors, Symbol.Rock)]
-    public void PlayerOneWithRockBeatsPlayerTwoWithScissors(Symbol one, Symbol another)
+    public void RockBeatsScissors(Symbol one, Symbol another)
     {
         var result = _game.play(one, another);
 
         Assert.Equal(Symbol.Rock, result);
     }
 
+    [Theory]
+    [InlineData(Symbol.Paper, Symbol.Rock)]
+    [InlineData(Symbol.Rock, Symbol.Paper)]
+    public void PaperBeatsRock(Symbol one, Symbol another)
+    {
+        var result = _game.play(one, another);
+
+        Assert.Equal(Symbol.Paper, result);
+    }
+
     [Fact]
-    public void PlayerOneWithScissorsBeatsPlayerTwoWithRock()
+    public void PlayerOneWithScissorsIsBeatenByPlayerTwoWithRock()
     {
         var result = _game.play(Symbol.Scissors, Symbol.Rock);
 
@@ -31,26 +41,10 @@ public class RockPaperScissorsTestShould
     }
 
     [Fact]
-    public void PlayerOneWithPaperBeatsPlayerTwoWithRock()
-    {
-        var result = _game.play(Symbol.Paper, Symbol.Rock);
-
-        Assert.Equal(Symbol.Paper, result);
-    }
-
-    [Fact]
-    public void PlayerOneWithScissorsIsBeatenByPlayerTwoWithRock()
-    { var result = _game.play(Symbol.Scissors, Symbol.Rock);
-
-        Assert.Equal(Symbol.Rock, result);
-    }
-
-    [Fact]
     public void PlayerOneWithScissorsBeatsByPlayerTwoWithPaper()
-    { var result = _game.play(Symbol.Scissors, Symbol.Paper);
+    {
+        var result = _game.play(Symbol.Scissors, Symbol.Paper);
 
         Assert.Equal(Symbol.Scissors, result);
     }
 }
-
-
