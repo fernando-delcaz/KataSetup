@@ -9,20 +9,24 @@ public enum Symbol
 
 public class Game
 {
-    public Symbol play(Symbol oneElement, Symbol anotherElement)
+    private readonly Dictionary<Symbol, Symbol> _winningMovement = new()
     {
-        HashSet<Symbol> symbols = new HashSet<Symbol>();
-        symbols.Add(oneElement);
-        symbols.Add(anotherElement);
+        { Symbol.Rock, Symbol.Paper },
+        { Symbol.Paper, Symbol.Scissors },
+        { Symbol.Scissors, Symbol.Rock },
+    };
 
-        if (symbols.Contains(Symbol.Paper) && symbols.Contains(Symbol.Rock))
+    public Symbol Play(Symbol oneElement, Symbol anotherElement)
+    {
+
+        if (_winningMovement[oneElement] == anotherElement)
         {
-            return Symbol.Paper;
+            return anotherElement;
         }
 
-        if (symbols.Contains(Symbol.Scissors) && symbols.Contains(Symbol.Rock))
+        if (_winningMovement[anotherElement] == oneElement)
         {
-            return Symbol.Rock;
+            return oneElement;
         }
 
         return Symbol.Scissors;

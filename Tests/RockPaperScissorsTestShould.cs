@@ -17,7 +17,7 @@ public class RockPaperScissorsTestShould
     [InlineData(Symbol.Scissors, Symbol.Rock)]
     public void RockBeatsScissors(Symbol one, Symbol another)
     {
-        var result = _game.play(one, another);
+        var result = _game.Play(one, another);
 
         Assert.Equal(Symbol.Rock, result);
     }
@@ -27,7 +27,7 @@ public class RockPaperScissorsTestShould
     [InlineData(Symbol.Rock, Symbol.Paper)]
     public void PaperBeatsRock(Symbol one, Symbol another)
     {
-        var result = _game.play(one, another);
+        var result = _game.Play(one, another);
 
         Assert.Equal(Symbol.Paper, result);
     }
@@ -37,7 +37,7 @@ public class RockPaperScissorsTestShould
     [InlineData(Symbol.Scissors, Symbol.Paper)]
     public void ScissorsBeatsPaper(Symbol one, Symbol another)
     {
-        var result = _game.play(one, another);
+        var result = _game.Play(one, another);
 
         Assert.Equal(Symbol.Scissors, result);
     }
