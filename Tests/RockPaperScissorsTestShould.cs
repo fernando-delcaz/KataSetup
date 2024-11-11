@@ -12,10 +12,12 @@ public class RockPaperScissorsTestShould
         _game = game;
     }
 
-    [Fact]
-    public void PlayerOneWithRockBeatsPlayerTwoWithScissors()
+    [Theory]
+    [InlineData(Symbol.Rock, Symbol.Scissors)]
+    [InlineData(Symbol.Scissors, Symbol.Rock)]
+    public void PlayerOneWithRockBeatsPlayerTwoWithScissors(Symbol one, Symbol another)
     {
-        var result = _game.play(Symbol.Rock, Symbol.Scissors);
+        var result = _game.play(one, another);
 
         Assert.Equal(Symbol.Rock, result);
     }
