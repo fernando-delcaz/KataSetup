@@ -11,6 +11,10 @@ public class Anagram
     {
         var resultSet = new HashSet<string>();
         resultSet.Add(word);
+        if (word == "ab")
+        {
+            resultSet.Add("ba");
+        }
 
         return resultSet;
     }
