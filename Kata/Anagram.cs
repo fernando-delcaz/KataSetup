@@ -7,8 +7,11 @@ public class Anagram
 
     }
 
-    public static HashSet<string> GetAnagrams(string s)
+    public static HashSet<string> GetAnagrams(string word)
     {
-        return new HashSet<string>();
+        var resultSet = new HashSet<string>();
+        resultSet.Add(word);
+
+        return resultSet;
     }
 }
